@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tavern Lootbox</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="tavern-container">
+    <!-- Left stone / right wood visual split (like the drawing) -->
+    <div class="wall left-wall"></div>
+    <div class="wall right-wall"></div>
+
+    <!-- Main UI -->
+    <div class="ui">
+      <!-- HUD (top-left) -->
+      <aside class="hud">
+        <div class="stats">
+          <div class="stat"><span class="label">HP</span> <span id="hp-value">52</span></div>
+          <div class="stat"><span class="label">Level</span> <span id="level-value">3</span></div>
+          <div class="stat"><span class="label">Coins</span> <span id="coins-value">230</span></div>
+        </div>
+
+        <div class="inventory">
+          <div class="inv-title">Inventory</div>
+          <div class="slots">
+            <div class="slot" id="slot-1">Empty</div>
+            <div class="slot" id="slot-2">Empty</div>
+            <div class="slot" id="slot-3">Empty</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center scene -->
+      <main class="scene">
+        <div id="win-text" class="win-text">YOU WIN!</div>
+
+        <div class="chest-area">
+          <!-- chest image or css fallback -->
+          <img id="lootbox-chest" src="assets/chest-closed.png" alt="Treasure Chest" />
+        </div>
+
+        <div id="lootbox-result" class="lootbox-result"></div>
+
+        <!-- coin particles container -->
+        <div id="coin-layer" class="coin-layer" aria-hidden="true"></div>
+      </main>
+
+      <!-- Bottom HUD panel (big gold bordered panel like the drawing) -->
+      <div class="bottom-panel" role="status" aria-live="polite">
+        <div class="panel-text">
+          <span>HP <span id="panel-hp">52</span></span>
+          <span>Level <span id="panel-level">3</span></span>
+          <span>Coins <span id="panel-coins">230</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Twitch helper (optional) -->
+  <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
